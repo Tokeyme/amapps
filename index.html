@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AM Apps — Apps for iOS &amp; Android</title>
+  <meta name="description" content="Independent apps for iOS and Android by Andreas Maier." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="AM Apps — Home">
+      <svg class="logo" viewBox="0 0 64 64" width="34" height="34" aria-hidden="true">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#4f46e5" />
+            <stop offset="1" stop-color="#06b6d4" />
+          </linearGradient>
+        </defs>
+        <rect width="64" height="64" rx="14" fill="url(#g)" />
+        <text x="32" y="43" font-family="-apple-system, Segoe UI, Arial" font-size="30"
+              fill="#fff" text-anchor="middle" font-weight="700">AM</text>
+      </svg>
+      <span class="brand-name">AM&nbsp;Apps</span>
+    </a>
+
+    <div class="lang-switch" role="group" aria-label="Language / Sprache">
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="de">DE</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1 data-i18n="hero_tagline">Independent apps for iOS &amp; Android</h1>
+      <p class="hero-sub" data-i18n="hero_sub"></p>
+      <p class="hero-by" data-i18n="hero_by"></p>
+    </section>
+
+    <section class="apps" aria-labelledby="apps-heading">
+      <h2 id="apps-heading" data-i18n="apps_heading">The apps</h2>
+
+      <div class="grid">
+        <!-- Converter / Umrechner -->
+        <article class="card">
+          <!-- TODO: replace the emoji with a real icon, e.g. <img src="assets/converter.png" alt=""> -->
+          <div class="icon icon-converter" aria-hidden="true">⇆</div>
+          <div class="card-body">
+            <h3 data-i18n="app_converter_name">Converter AM</h3>
+            <p data-i18n="app_converter_desc"></p>
+            <div class="platforms">
+              <span class="pill">iOS</span>
+              <span class="pill">Android</span>
+            </div>
+            <div class="stores">
+              <!-- TODO: replace # with the real App Store / Google Play link -->
+              <a class="store" href="#" data-i18n="btn_appstore">App Store</a>
+              <a class="store" href="#" data-i18n="btn_googleplay">Google Play</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Podcast AM -->
+        <article class="card">
+          <div class="icon icon-podcast" aria-hidden="true">🎙️</div>
+          <div class="card-body">
+            <h3 data-i18n="app_podcast_name">Podcast AM</h3>
+            <p data-i18n="app_podcast_desc"></p>
+            <div class="platforms">
+              <span class="pill">iOS</span>
+              <span class="pill">Android</span>
+            </div>
+            <div class="stores">
+              <a class="store" href="#" data-i18n="btn_appstore">App Store</a>
+              <a class="store" href="#" data-i18n="btn_googleplay">Google Play</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Feste — German page only -->
+        <article class="card" data-only="de">
+          <div class="icon icon-feste" aria-hidden="true">🎉</div>
+          <div class="card-body">
+            <h3>
+              <span data-i18n="app_feste_name">Feste AM</span>
+              <span class="badge" data-i18n="badge_dev">In Entwicklung</span>
+            </h3>
+            <p data-i18n="app_feste_desc"></p>
+            <div class="platforms">
+              <span class="pill">iOS</span>
+              <span class="pill">Android</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-made" data-i18n="footer_made"></p>
+    <nav class="footer-links">
+      <a href="impressum.html" data-i18n="footer_imprint">Impressum</a>
+      <span aria-hidden="true">·</span>
+      <a href="datenschutz.html" data-i18n="footer_privacy">Datenschutz</a>
+    </nav>
+    <p class="copy">© 2026 Andreas Maier</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
