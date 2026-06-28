@@ -64,7 +64,12 @@ a { color: inherit; }
   font-size: 18px;
   letter-spacing: -.01em;
 }
-.logo { display: block; border-radius: 10px; }
+.logo { display: block; height: 26px; width: auto; }
+.brand-name { font-weight: 500; font-size: 17px; }
+
+@media (prefers-color-scheme: dark) {
+  .logo { filter: invert(1); }
+}
 
 .lang-switch {
   display: inline-flex;

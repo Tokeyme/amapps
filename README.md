@@ -31,6 +31,8 @@ python -m http.server 8000
 - **App-Namen:** „Converter AM" (EN) / „Umrechner AM" (DE) und „Feste AM" lassen sich dort frei ändern.
 - **App-Icons:** aktuell Emoji als Platzhalter. Für echte Icons in `index.html` das
   `<div class="icon …">…</div>` durch ein Bild ersetzen, z. B. `<img src="assets/converter.png" alt="">`.
+- **Logo:** liegt als `assets/am-logo.png` (transparent, schwarz). Quelle: `assets/am-logo-source.jpg`.
+  Zum Austauschen einfach die PNG ersetzen — sie wird per CSS im Dark Mode automatisch invertiert (weiß).
 - **Store-Links:** in `index.html` die `href="#"` der App-Store-/Google-Play-Buttons
   durch die echten Links ersetzen (Suche nach `TODO`).
 - **Feste-App:** erscheint absichtlich nur auf der **deutschen** Seite (`data-only="de"`).
