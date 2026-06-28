@@ -159,12 +159,9 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px)
   width: 60px;
   height: 60px;
   border-radius: 15px;
-  display: grid;
-  place-items: center;
-  font-size: 30px;
-  color: #fff;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  box-shadow: 0 6px 16px rgba(79, 70, 229, .25);
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 4px 12px rgba(16, 24, 40, .14);
 }
 .icon-podcast { background: linear-gradient(135deg, #f43f5e, #f59e0b); box-shadow: 0 6px 16px rgba(244, 63, 94, .25); }
 .icon-feste   { background: linear-gradient(135deg, #10b981, #06b6d4); box-shadow: 0 6px 16px rgba(16, 185, 129, .25); }
