@@ -28,7 +28,7 @@ python -m http.server 8000
 ## Anpassen
 
 - **Sprache/Texte:** alle Texte stehen in `app.js` ganz oben in `I18N` (Abschnitte `en` und `de`).
-- **App-Namen:** „Converter AM" (EN) / „Umrechner AM" (DE) und „Feste AM" lassen sich dort frei ändern.
+- **App-Namen:** „Converter AM" (EN) / „Umrechner AM" (DE) und „Fest AM" lassen sich dort frei ändern.
 - **App-Icons:** echte App-Store-Icons in `assets/` (`converter.png`, `podcast.png`, `feste.png`,
   je 256×256). Zum Ändern einfach die PNG ersetzen.
 - **Logo:** liegt als `assets/am-logo.png` (transparent, schwarz). Quelle: `assets/am-logo-source.jpg`.
