@@ -33,57 +33,159 @@
       <h2 id="apps-heading" data-i18n="apps_heading">The apps</h2>
 
       <div class="grid">
-        <!-- Converter / Umrechner -->
-        <article class="card">
-          <img class="icon" src="assets/converter.png" alt="" width="60" height="60" />
-          <div class="card-body">
-            <h3 data-i18n="app_converter_name">Converter AM</h3>
-            <p data-i18n="app_converter_desc"></p>
-            <div class="platforms">
-              <span class="pill">iOS</span>
-              <span class="pill">Android</span>
-            </div>
-            <div class="stores">
-              <a class="store" href="https://apps.apple.com/app/id1450259074" target="_blank" rel="noopener" data-i18n="btn_appstore">App Store</a>
-              <a class="store" href="https://play.google.com/store/apps/details?id=app.amapps.converter" target="_blank" rel="noopener" data-i18n="btn_googleplay">Google Play</a>
-            </div>
-          </div>
-        </article>
 
         <!-- Podcast AM -->
         <article class="card">
-          <img class="icon" src="assets/podcast.png" alt="" width="60" height="60" />
-          <div class="card-body">
-            <h3 data-i18n="app_podcast_name">Podcast AM</h3>
-            <p data-i18n="app_podcast_desc"></p>
-            <div class="platforms">
-              <span class="pill">iOS</span>
-              <span class="pill">Android</span>
+          <div class="card-head">
+            <img class="icon" src="assets/podcast.png" alt="" width="60" height="60" />
+            <div class="card-text">
+              <h3 data-i18n="app_podcast_name">Podcast AM</h3>
+              <p data-i18n="app_podcast_desc"></p>
             </div>
-            <div class="stores">
-              <a class="store" href="https://apps.apple.com/app/id1604019625" target="_blank" rel="noopener" data-i18n="btn_appstore">App Store</a>
-              <a class="store" href="https://play.google.com/store/apps/details?id=com.podcastam.podcast_am" target="_blank" rel="noopener" data-i18n="btn_googleplay">Google Play</a>
-            </div>
+          </div>
+
+          <div class="shots">
+            <button class="shot" type="button" data-shot="podcast-1" data-full="assets/shots/podcast-1-lg.jpg">
+              <img src="assets/shots/podcast-1.jpg" alt="" width="300" height="650" loading="lazy" />
+            </button>
+            <button class="shot" type="button" data-shot="podcast-2" data-full="assets/shots/podcast-2-lg.jpg">
+              <img src="assets/shots/podcast-2.jpg" alt="" width="300" height="650" loading="lazy" />
+            </button>
+          </div>
+
+          <div class="stores">
+            <a class="badge-link" href="https://apps.apple.com/app/id1604019625" target="_blank" rel="noopener">
+              <img class="badge badge-apple" src="assets/badges/apple-en.svg" alt="Download on the App Store" data-badge="apple" width="120" height="40" />
+            </a>
+            <a class="badge-link" href="https://play.google.com/store/apps/details?id=com.podcastam.podcast_am" target="_blank" rel="noopener">
+              <img class="badge badge-google" src="assets/badges/google-en.png" alt="Get it on Google Play" data-badge="google" width="646" height="250" />
+            </a>
           </div>
         </article>
 
-        <!-- Feste — German page only -->
-        <article class="card" data-only="de">
-          <img class="icon" src="assets/feste.png" alt="" width="60" height="60" />
-          <div class="card-body">
-            <h3 data-i18n="app_feste_name">Fest AM</h3>
-            <p data-i18n="app_feste_desc"></p>
-            <div class="platforms">
-              <span class="pill">iOS</span>
-              <span class="pill">Android</span>
-            </div>
-            <div class="stores">
-              <a class="store" href="https://apps.apple.com/de/app/id6781781563" target="_blank" rel="noopener" data-i18n="btn_appstore">App Store</a>
-              <a class="store" href="https://play.google.com/store/apps/details?id=com.festivalsam.app" target="_blank" rel="noopener" data-i18n="btn_googleplay">Google Play</a>
-              <a class="store" href="https://festam.app" target="_blank" rel="noopener" data-i18n="btn_web">Im Browser</a>
+        <!-- Umrechner / Converter AM -->
+        <article class="card">
+          <div class="card-head">
+            <img class="icon" src="assets/converter.png" alt="" width="60" height="60" />
+            <div class="card-text">
+              <h3 data-i18n="app_converter_name">Converter AM</h3>
+              <p data-i18n="app_converter_desc"></p>
             </div>
           </div>
+
+          <div class="shots">
+            <button class="shot" type="button" data-shot="converter-{lang}-1" data-full="assets/shots/converter-en-1-lg.jpg">
+              <img src="assets/shots/converter-en-1.jpg" alt="" width="300" height="533" loading="lazy" />
+            </button>
+            <button class="shot" type="button" data-shot="converter-{lang}-2" data-full="assets/shots/converter-en-2-lg.jpg">
+              <img src="assets/shots/converter-en-2.jpg" alt="" width="300" height="533" loading="lazy" />
+            </button>
+          </div>
+
+          <div class="stores">
+            <a class="badge-link" href="https://apps.apple.com/app/id1450259074" target="_blank" rel="noopener">
+              <img class="badge badge-apple" src="assets/badges/apple-en.svg" alt="Download on the App Store" data-badge="apple" width="120" height="40" />
+            </a>
+            <a class="badge-link" href="https://play.google.com/store/apps/details?id=app.amapps.converter" target="_blank" rel="noopener">
+              <img class="badge badge-google" src="assets/badges/google-en.png" alt="Get it on Google Play" data-badge="google" width="646" height="250" />
+            </a>
+          </div>
         </article>
+
+        <!-- Rapport AM -->
+        <article class="card">
+          <div class="card-head">
+            <img class="icon" src="assets/rapport.png" alt="" width="60" height="60" />
+            <div class="card-text">
+              <h3 data-i18n="app_rapport_name">Rapport AM</h3>
+              <p data-i18n="app_rapport_desc"></p>
+            </div>
+          </div>
+
+          <div class="shots">
+            <button class="shot" type="button" data-shot="rapport-1" data-full="assets/shots/rapport-1-lg.jpg">
+              <img src="assets/shots/rapport-1.jpg" alt="" width="300" height="652" loading="lazy" />
+            </button>
+            <button class="shot" type="button" data-shot="rapport-2" data-full="assets/shots/rapport-2-lg.jpg">
+              <img src="assets/shots/rapport-2.jpg" alt="" width="300" height="652" loading="lazy" />
+            </button>
+          </div>
+
+          <p class="avail" data-i18n="avail_rapport"></p>
+
+          <div class="stores">
+            <a class="badge-link" href="https://apps.apple.com/de/app/id6797967865" target="_blank" rel="noopener">
+              <img class="badge badge-apple" src="assets/badges/apple-en.svg" alt="Download on the App Store" data-badge="apple" width="120" height="40" />
+            </a>
+            <a class="badge-link" href="https://play.google.com/store/apps/details?id=com.rapportam.app" target="_blank" rel="noopener">
+              <img class="badge badge-google" src="assets/badges/google-en.png" alt="Get it on Google Play" data-badge="google" width="646" height="250" />
+            </a>
+          </div>
+        </article>
+
+        <!-- Fest AM -->
+        <article class="card">
+          <div class="card-head">
+            <img class="icon" src="assets/feste.png" alt="" width="60" height="60" />
+            <div class="card-text">
+              <h3 data-i18n="app_feste_name">Fest AM</h3>
+              <p data-i18n="app_feste_desc"></p>
+            </div>
+          </div>
+
+          <div class="shots">
+            <button class="shot" type="button" data-shot="feste-1" data-full="assets/shots/feste-1-lg.jpg">
+              <img src="assets/shots/feste-1.jpg" alt="" width="300" height="652" loading="lazy" />
+            </button>
+            <button class="shot" type="button" data-shot="feste-2" data-full="assets/shots/feste-2-lg.jpg">
+              <img src="assets/shots/feste-2.jpg" alt="" width="300" height="652" loading="lazy" />
+            </button>
+          </div>
+
+          <p class="avail" data-i18n="avail_feste"></p>
+
+          <div class="stores">
+            <a class="badge-link" href="https://apps.apple.com/de/app/id6781781563" target="_blank" rel="noopener">
+              <img class="badge badge-apple" src="assets/badges/apple-en.svg" alt="Download on the App Store" data-badge="apple" width="120" height="40" />
+            </a>
+            <a class="badge-link" href="https://play.google.com/store/apps/details?id=com.festivalsam.app" target="_blank" rel="noopener">
+              <img class="badge badge-google" src="assets/badges/google-en.png" alt="Get it on Google Play" data-badge="google" width="646" height="250" />
+            </a>
+            <a class="store" href="https://festam.app" target="_blank" rel="noopener" data-i18n="btn_web">Open in browser</a>
+          </div>
+        </article>
+
+        <!-- Radio AM -->
+        <article class="card">
+          <div class="card-head">
+            <img class="icon" src="assets/radio.png" alt="" width="60" height="60" />
+            <div class="card-text">
+              <h3 data-i18n="app_radio_name">Radio AM</h3>
+              <p data-i18n="app_radio_desc"></p>
+            </div>
+          </div>
+
+          <div class="shots">
+            <button class="shot" type="button" data-shot="radio-{lang}-1" data-full="assets/shots/radio-en-1-lg.jpg">
+              <img src="assets/shots/radio-en-1.jpg" alt="" width="300" height="533" loading="lazy" />
+            </button>
+            <button class="shot" type="button" data-shot="radio-{lang}-2" data-full="assets/shots/radio-en-2-lg.jpg">
+              <img src="assets/shots/radio-en-2.jpg" alt="" width="300" height="533" loading="lazy" />
+            </button>
+          </div>
+
+          <details class="avail avail-more">
+            <summary data-i18n="avail_radio"></summary>
+            <p data-i18n="avail_radio_list"></p>
+          </details>
+
+          <div class="stores">
+            <a class="badge-link" href="https://play.google.com/store/apps/details?id=com.amapps.radio" target="_blank" rel="noopener">
+              <img class="badge badge-google" src="assets/badges/google-en.png" alt="Get it on Google Play" data-badge="google" width="646" height="250" />
+            </a>
+          </div>
+        </article>
+
       </div>
     </section>
   </main>
@@ -97,6 +199,12 @@
     </nav>
     <p class="copy">© 2026 Andreas Maier</p>
   </footer>
+
+  <!-- Screenshot-Vollansicht -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" type="button" id="lightbox-close" aria-label="Close">&times;</button>
+    <img id="lightbox-img" src="" alt="" />
+  </div>
 
   <script src="app.js"></script>
   <!-- Cloudflare Web Analytics (cookieless) -->

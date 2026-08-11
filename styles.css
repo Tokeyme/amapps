@@ -138,13 +138,13 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px)
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 18px;
 }
 
 .card {
   display: flex;
-  gap: 16px;
+  flex-direction: column;
   padding: 20px;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -153,6 +153,8 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px)
   transition: transform .15s ease, box-shadow .15s ease;
 }
 .card:hover { transform: translateY(-2px); }
+
+.card-head { display: flex; gap: 16px; margin-bottom: 16px; }
 
 .icon {
   flex: 0 0 auto;
@@ -163,47 +165,73 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px)
   display: block;
   box-shadow: 0 4px 12px rgba(16, 24, 40, .14);
 }
-.icon-podcast { background: linear-gradient(135deg, #f43f5e, #f59e0b); box-shadow: 0 6px 16px rgba(244, 63, 94, .25); }
-.icon-feste   { background: linear-gradient(135deg, #10b981, #06b6d4); box-shadow: 0 6px 16px rgba(16, 185, 129, .25); }
 
-.card-body { min-width: 0; }
-.card-body h3 {
+.card-text { min-width: 0; }
+.card-text h3 {
   margin: 2px 0 6px;
   font-size: 18px;
   letter-spacing: -.01em;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
 }
-.card-body p {
-  margin: 0 0 14px;
+.card-text p {
+  margin: 0;
   color: var(--muted);
   font-size: 14.5px;
 }
 
-.badge {
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .04em;
-  color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 14%, transparent);
-  padding: 2px 8px;
-  border-radius: 999px;
-}
-
-.platforms { display: flex; gap: 6px; margin-bottom: 14px; }
-.pill {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--muted);
+/* Bildschirmfotos */
+.shots { display: flex; gap: 10px; margin: 0 0 16px; }
+.shot {
+  appearance: none;
+  padding: 0;
+  line-height: 0;
+  background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 3px 10px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: zoom-in;
+  transition: transform .15s ease, border-color .15s ease;
 }
+.shot:hover { transform: translateY(-2px); border-color: var(--accent); }
+.shot:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.shot img { display: block; height: 230px; width: auto; }
 
-.stores { display: flex; flex-wrap: wrap; gap: 8px; }
+/* Hinweis zur Verfügbarkeit — bleibt zusammen mit den Store-Buttons unten in
+   der Karte, damit unterschiedlich hohe Karten einer Reihe bündig abschließen. */
+.avail {
+  margin: auto 0 16px;
+  font-size: 13px;
+  color: var(--muted);
+  background: color-mix(in srgb, var(--muted) 9%, transparent);
+  border-left: 3px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  border-radius: 0 8px 8px 0;
+  padding: 8px 12px;
+}
+.avail-more summary {
+  cursor: pointer;
+  list-style: none;
+}
+.avail-more summary::-webkit-details-marker { display: none; }
+.avail-more summary::after { content: " ▾"; }
+.avail-more[open] summary::after { content: " ▴"; }
+.avail-more p { margin: 8px 0 0; }
+
+/* Store-Buttons (offizielle Vorlagen von Apple und Google) */
+.stores {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+}
+.avail ~ .stores { margin-top: 0; }
+.badge-link { display: inline-flex; line-height: 0; border-radius: 8px; }
+.badge-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.badge { display: block; width: auto; }
+.badge-apple { height: 40px; }
+/* Die Google-Vorlage bringt ihren Schutzraum als Rand mit: 52px Bildhöhe
+   entsprechen 40px sichtbarem Button — damit sind beide gleich groß. */
+.badge-google { height: 52px; }
+
 .store {
   text-decoration: none;
   font-size: 13px;
@@ -215,6 +243,42 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px)
   transition: border-color .15s, background .15s;
 }
 .store:hover { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, transparent); }
+
+/* Bildschirmfoto in groß */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 20px;
+  background: rgba(0, 0, 0, .82);
+  backdrop-filter: blur(4px);
+  cursor: zoom-out;
+}
+.lightbox img {
+  max-width: min(100%, 380px);
+  max-height: 100%;
+  width: auto;
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .5);
+}
+.lightbox-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 34px;
+  line-height: 1;
+  padding: 4px 10px;
+  cursor: pointer;
+  opacity: .85;
+}
+.lightbox-close:hover { opacity: 1; }
 
 /* Footer */
 .site-footer {
@@ -230,6 +294,6 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px)
 .footer-links a:hover { color: var(--text); text-decoration: underline; }
 .copy { margin: 10px 0 0; opacity: .8; }
 
-@media (max-width: 380px) {
-  .card { flex-direction: column; }
+@media (max-width: 420px) {
+  .shot img { height: 190px; }
 }
