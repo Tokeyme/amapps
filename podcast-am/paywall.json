@@ -1,5 +1,5 @@
 {
-  "default": { "paywall": "c", "frequency": 2, "subscriptions": false },
+  "default": { "paywall": "c", "frequency": 2, "subscriptions": true },
   "regions": {
     "US": { "paywall": "a", "frequency": 2, "subscriptions": false },
     "CN": { "paywall": "a", "frequency": 2, "subscriptions": false }
