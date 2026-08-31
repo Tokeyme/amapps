@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "updated": "2026-08-31",
+  "sources": [
+    "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml",
+    "https://amapps.app/rates/eurofxref-daily.xml"
+  ],
+  "note": "Woher Umrechner AM und Einheiten ihre Wechselkurse laden, in dieser Reihenfolge. Die erste Adresse, die eine lesbare und aktuelle EZB-XML liefert, gewinnt. Diese Datei laesst sich aendern, ohne eine App neu einzureichen: installierte Apps holen sie sich taeglich. Erlaubt sind nur https-Adressen auf www.ecb.europa.eu und amapps.app; alles andere ignorieren die Apps und bleiben bei ihrer eingebauten Liste. eurofxref-daily.xml unter amapps.app ist eine unveraenderte taegliche Kopie des EZB-Feeds (siehe .github/workflows/ecb-rates-mirror.yml)."
+}

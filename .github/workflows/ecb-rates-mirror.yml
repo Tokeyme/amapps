@@ -1,0 +1,77 @@
+name: EZB-Kurse spiegeln
+
+# Kopiert die täglichen EZB-Referenzkurse unverändert auf amapps.app.
+#
+# Warum: Umrechner AM lädt die Kurse direkt bei der EZB. Am 01.08.2026 hat die EZB ein
+# Zertifikat bekommen, dessen Wurzel alte Geräte (iOS 15/16) nicht kennen — die App war
+# dort wochenlang ohne Währungen, und reparieren ließ sich das nur mit einem
+# App-Store-Update. Dieser Spiegel ist die Rückfallebene: er liegt auf einem Host mit
+# Let's-Encrypt-Kette, der von jedem Gerät bis zurück zu iOS 9 akzeptiert wird. Fällt die
+# EZB-Adresse künftig wieder aus, greift die App hierauf zurück, ohne dass ein Update
+# nötig ist.
+#
+# Die Datei wird UNVERÄNDERT gespiegelt — dieselbe XML, derselbe Parser in der App.
+
+on:
+  schedule:
+    # Die EZB veröffentlicht die Referenzkurse gegen 16:00 MEZ, an Handelstagen.
+    # Zweimal am Tag, damit ein verpasster Lauf nicht bis zum nächsten Tag durchschlägt.
+    - cron: "20 15 * * 1-5"
+    - cron: "20 19 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ecb-rates-mirror
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Kurse holen und prüfen
+        run: |
+          set -euo pipefail
+          curl -fsSL --retry 3 --retry-delay 5 --max-time 60 \
+            -o fresh.xml \
+            "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml"
+
+          # Plausibilität, bevor irgendetwas veröffentlicht wird: eine kaputte oder
+          # umgeleitete Antwort darf den Spiegel nicht überschreiben.
+          grep -q "eurofxref" fresh.xml
+          grep -q "currency='USD'" fresh.xml
+          count=$(grep -o "currency='[A-Z]*'" fresh.xml | wc -l | tr -d ' ')
+          if [ "$count" -lt 20 ]; then
+            echo "Nur $count Währungen im Feed — sieht kaputt aus, Abbruch." >&2
+            exit 1
+          fi
+
+          # Das Kursdatum aus der XML muss aktuell sein, sonst spiegeln wir eine
+          # eingefrorene Datei weiter und die App merkt es nie.
+          date_in_feed=$(grep -o "time='[0-9-]*'" fresh.xml | head -1 | grep -o "[0-9-]\{10\}")
+          age_days=$(( ( $(date -u +%s) - $(date -u -d "$date_in_feed" +%s) ) / 86400 ))
+          echo "Kursdatum $date_in_feed, $age_days Tage alt, $count Währungen."
+          if [ "$age_days" -gt 10 ]; then
+            echo "Kurse sind $age_days Tage alt — die EZB liefert nichts Frisches, Abbruch." >&2
+            exit 1
+          fi
+
+          mkdir -p rates
+          mv fresh.xml rates/eurofxref-daily.xml
+
+      - name: Änderung veröffentlichen
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- rates/eurofxref-daily.xml; then
+            echo "Unverändert — nichts zu tun."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add rates/eurofxref-daily.xml
+          git commit -m "EZB-Kurse spiegeln ($(grep -o "time='[0-9-]*'" rates/eurofxref-daily.xml | head -1 | grep -o '[0-9-]\{10\}'))"
+          git push
