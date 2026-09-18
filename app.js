@@ -30,14 +30,8 @@ const I18N = {
     app_feste_name: "Fest AM",
     app_feste_desc: "Find local festivals and events in your region — even offline.",
 
-    app_radio_name: "Radio AM",
-    app_radio_desc: "Internet radio without ads — stations from 16 countries, favourites and reliable background playback.",
-
     avail_rapport: "Available in Germany, Austria and Switzerland only — the app is in German.",
     avail_feste: "Available in Germany only — the app is in German.",
-    avail_radio: "Not available everywhere: on Android in 16 countries, on iPhone in Czechia only so far",
-    avail_radio_list:
-      "Android: Austria, Belgium, Czechia, Denmark, France, Germany, Greece, Hungary, Italy, Latvia, Netherlands, Norway, Romania, Sweden, Switzerland, Türkiye. — iPhone: Czechia only for now, which is why the App Store button opens the Czech store.",
 
     badge_dev: "In development",
     footer_made: "Made with care in Germany.",
@@ -71,14 +65,8 @@ const I18N = {
     app_feste_name: "Fest AM",
     app_feste_desc: "Finde Feste und Veranstaltungen in deiner Region — auch offline.",
 
-    app_radio_name: "Radio AM",
-    app_radio_desc: "Internetradio ohne Werbung — Sender aus 16 Ländern, Favoriten und zuverlässige Hintergrundwiedergabe.",
-
     avail_rapport: "Nur in Deutschland, Österreich und der Schweiz erhältlich — die App ist auf Deutsch.",
     avail_feste: "Nur in Deutschland erhältlich — die App ist auf Deutsch.",
-    avail_radio: "Nicht überall erhältlich: für Android in 16 Ländern, fürs iPhone bisher nur in Tschechien",
-    avail_radio_list:
-      "Android: Belgien, Dänemark, Deutschland, Frankreich, Griechenland, Italien, Lettland, Niederlande, Norwegen, Österreich, Rumänien, Schweden, Schweiz, Tschechien, Türkei, Ungarn. — iPhone: bisher nur Tschechien, deshalb führt der App-Store-Knopf in den tschechischen Store.",
 
     badge_dev: "In Entwicklung",
     footer_made: "Mit Sorgfalt in Deutschland gemacht.",
