@@ -1,6 +1,6 @@
 # AM Apps — Website
 
-Eine schlanke, zweisprachige (EN/DE) statische Startseite für deine Apps.
+Eine schlanke, dreisprachige (EN/DE/中文) statische Startseite für deine Apps.
 Kein Build-Schritt, keine Abhängigkeiten — einfach HTML, CSS und ein bisschen JavaScript.
 
 ## Dateien
@@ -9,9 +9,9 @@ Kein Build-Schritt, keine Abhängigkeiten — einfach HTML, CSS und ein bisschen
 |---|---|
 | `index.html` | Die Startseite (Aufbau & Inhalte) |
 | `styles.css` | Das gesamte Design (inkl. Dark Mode automatisch) |
-| `app.js` | Sprachumschaltung EN/DE (alle Texte stehen oben in der Datei) |
-| `impressum.html` | Impressum (Platzhalter — bitte ausfüllen) |
-| `datenschutz.html` | Datenschutz (Platzhalter — deine GitHub-Fassung einsetzen/verlinken) |
+| `app.js` | Sprachumschaltung EN/DE/ZH (alle Texte stehen oben in der Datei; Chinesisch = vereinfachte Schrift) |
+| `impressum.html` | Impressum (nur Deutsch) |
+| `datenschutz.html` | Datenschutzerklärung der Webseite (nur Deutsch) |
 | `favicon.svg` | Das kleine „AM"-Logo im Browser-Tab |
 
 ## Ansehen (lokal)

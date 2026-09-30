@@ -31,7 +31,8 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", sans-serif;
   color: var(--text);
   background: var(--bg);
   line-height: 1.55;
@@ -297,3 +298,8 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px)
 @media (max-width: 420px) {
   .shot img { height: 190px; }
 }
+
+/* Chinesisch: die engere Laufweite der Ueberschriften ist fuer lateinische
+   Schrift gedacht und drueckt die Schriftzeichen zusammen. */
+:lang(zh) .hero h1,
+:lang(zh) .card-text h3 { letter-spacing: 0; }

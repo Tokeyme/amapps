@@ -24,14 +24,14 @@ const I18N = {
     app_converter_name: "Converter AM",
     app_converter_desc: "A clean, fast unit and currency converter — lengths, weights, temperatures, currencies and more, all in one place.",
 
-    app_rapport_name: "Rapport AM",
+    app_rapport_name: "Report AM",
     app_rapport_desc: "Job sheets for tradespeople: record work, hours and materials on site, collect the signature and send everything as a PDF. Works entirely offline.",
 
     app_feste_name: "Fest AM",
     app_feste_desc: "Find local festivals and events in your region — even offline.",
 
-    avail_rapport: "Available in Germany, Austria and Switzerland only — the app is in German.",
-    avail_feste: "Available in Germany only — the app is in German.",
+    avail_rapport: "Not available in every country — among others, not in China, Hong Kong, Taiwan, Japan, South Korea, India, Thailand or the Middle East.",
+    avail_feste: "Available in Germany only.",
 
     badge_dev: "In development",
     footer_made: "Made with care in Germany.",
@@ -65,13 +65,48 @@ const I18N = {
     app_feste_name: "Fest AM",
     app_feste_desc: "Finde Feste und Veranstaltungen in deiner Region — auch offline.",
 
-    avail_rapport: "Nur in Deutschland, Österreich und der Schweiz erhältlich — die App ist auf Deutsch.",
-    avail_feste: "Nur in Deutschland erhältlich — die App ist auf Deutsch.",
+    avail_rapport: "Nicht in allen Ländern erhältlich — unter anderem nicht in China, Hongkong, Taiwan, Japan, Südkorea, Indien, Thailand und im Nahen Osten.",
+    avail_feste: "Nur in Deutschland erhältlich.",
 
     badge_dev: "In Entwicklung",
     footer_made: "Mit Sorgfalt in Deutschland gemacht.",
     footer_imprint: "Impressum",
     footer_privacy: "Datenschutz",
+  },
+  zh: {
+    page_title: "AM Apps — iOS 和 Android 应用",
+    meta_desc: "Andreas Maier 开发的 iOS 和 Android 应用。",
+    hero_tagline: "iOS 和 Android 应用",
+    hero_sub: "简洁易用的应用，从设计到开发都由我独立完成——专注核心功能，用心打造。",
+    hero_by: "开发者：Andreas Maier",
+    apps_heading: "我的应用",
+    btn_appstore: "App Store",
+    btn_googleplay: "Google Play",
+    btn_web: "打开网页版",
+    badge_apple_alt: "在 App Store 下载",
+    badge_google_alt: "去商店下载（Google Play）",
+    shot_label: "截图",
+    lightbox_close: "关闭",
+
+    app_podcast_name: "Podcast AM",
+    app_podcast_desc: "一款简洁专注的播客播放器，提供排行榜、搜索和稳定的后台播放。发现热门节目，随心收听。",
+
+    app_converter_name: "转换器 AM",
+    app_converter_desc: "简洁、快速的单位和货币换算工具——长度、重量、温度、货币等，一应俱全。",
+
+    app_rapport_name: "Report AM",
+    app_rapport_desc: "专为水电安装、装修、维修等行业打造的电子工单应用：在现场记录工作内容、工时和材料，请客户签字确认，再生成 PDF 一并发送。完全离线运行。",
+
+    app_feste_name: "Fest AM",
+    app_feste_desc: "查找德国各地的节庆和活动——离线也能使用。",
+
+    avail_rapport: "并非所有国家和地区都能下载——例如中国大陆、香港、台湾、日本、韩国、印度、泰国和中东地区均未上架；应用界面也没有中文。",
+    avail_feste: "仅在德国上架；应用界面没有中文。",
+
+    badge_dev: "开发中",
+    footer_made: "在德国用心打造。",
+    footer_imprint: "法律声明（德文）",
+    footer_privacy: "隐私政策（德文）",
   },
 };
 
@@ -84,11 +119,15 @@ const BADGES = {
   google: (lang) => `assets/badges/google-${lang}.png`,
 };
 
+// Wert fuers lang-Attribut. Bei Chinesisch die Schrift mit angeben: dann
+// waehlt der Browser vereinfachte Zeichenformen und eine passende Schrift.
+const HTML_LANG = { en: "en", de: "de", zh: "zh-Hans" };
+
 function setLang(lang) {
   if (!I18N[lang]) lang = "en";
   const dict = I18N[lang];
 
-  document.documentElement.lang = lang;
+  document.documentElement.lang = HTML_LANG[lang] || lang;
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.dataset.i18n;
@@ -103,9 +142,12 @@ function setLang(lang) {
     el.alt = el.dataset.badge === "google" ? dict.badge_google_alt : dict.badge_apple_alt;
   });
 
-  // Bildschirmfotos: einige Apps haben je Sprache eigene Aufnahmen.
+  // Bildschirmfotos: einige Apps haben je Sprache eigene Aufnahmen; welche,
+  // steht in data-shot-langs. Fehlt die Sprache, gelten die englischen.
   document.querySelectorAll(".shot").forEach((btn) => {
-    const name = btn.dataset.shot.replace("{lang}", lang);
+    const vorhanden = (btn.dataset.shotLangs || "").split(",");
+    const shotLang = vorhanden.includes(lang) ? lang : "en";
+    const name = btn.dataset.shot.replace("{lang}", shotLang);
     const img = btn.querySelector("img");
     const thumb = `assets/shots/${name}.jpg`;
     if (!img.getAttribute("src").endsWith(thumb)) img.setAttribute("src", thumb);
@@ -140,8 +182,10 @@ function initLang() {
   let lang = null;
   try { lang = localStorage.getItem("amapps_lang"); } catch (e) { /* ignore */ }
   if (!lang) {
-    // English is the default; German visitors get German automatically.
-    lang = (navigator.language || "en").toLowerCase().startsWith("de") ? "de" : "en";
+    // English is the default; German and Chinese visitors get their language
+    // automatically (all Chinese variants get the simplified-Chinese page).
+    const nav = (navigator.language || "en").toLowerCase();
+    lang = nav.startsWith("de") ? "de" : nav.startsWith("zh") ? "zh" : "en";
   }
   setLang(lang);
 }
