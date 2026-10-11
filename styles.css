@@ -244,6 +244,15 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px)
   transition: border-color .15s, background .15s;
 }
 .store:hover { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, transparent); }
+/* Einziger Knopf einer Karte (Fest AM): so kraeftig wie ein Store-Knopf */
+.store-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 18px;
+}
+.store-primary:hover { background: color-mix(in srgb, var(--accent) 85%, #000); border-color: transparent; color: #fff; }
 
 /* Bildschirmfoto in groß */
 .lightbox {

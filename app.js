@@ -28,10 +28,9 @@ const I18N = {
     app_rapport_desc: "Job sheets for tradespeople: record work, hours and materials on site, collect the signature and send everything as a PDF. Works entirely offline.",
 
     app_feste_name: "Fest AM",
-    app_feste_desc: "Find local festivals and events in your region — even offline.",
+    app_feste_desc: "Find festivals and events in your region — right in your browser, nothing to install.",
 
     avail_rapport: "Not available in every country — among others, not in China, Hong Kong, Taiwan, Japan, South Korea, India, Thailand or the Middle East.",
-    avail_feste: "Available in Germany only.",
 
     badge_dev: "In development",
     footer_made: "Made with care in Germany.",
@@ -63,10 +62,9 @@ const I18N = {
     app_rapport_desc: "Rapportzettel für Handwerksbetriebe: Arbeiten, Zeiten und Material direkt vor Ort erfassen, unterschreiben lassen und alles als PDF verschicken. Läuft komplett offline.",
 
     app_feste_name: "Fest AM",
-    app_feste_desc: "Finde Feste und Veranstaltungen in deiner Region — auch offline.",
+    app_feste_desc: "Finde Feste und Veranstaltungen in deiner Region — direkt im Browser, ohne Installation.",
 
     avail_rapport: "Nicht in allen Ländern erhältlich — unter anderem nicht in China, Hongkong, Taiwan, Japan, Südkorea, Indien, Thailand und im Nahen Osten.",
-    avail_feste: "Nur in Deutschland erhältlich.",
 
     badge_dev: "In Entwicklung",
     footer_made: "Mit Sorgfalt in Deutschland gemacht.",
@@ -98,10 +96,9 @@ const I18N = {
     app_rapport_desc: "专为水电安装、装修、维修等行业打造的电子工单应用：在现场记录工作内容、工时和材料，请客户签字确认，再生成 PDF 一并发送。完全离线运行。",
 
     app_feste_name: "Fest AM",
-    app_feste_desc: "查找德国各地的节庆和活动——离线也能使用。",
+    app_feste_desc: "查找德国各地的节庆和活动——打开网页版即可使用，无需安装。",
 
     avail_rapport: "并非所有国家和地区都能下载——例如中国大陆、香港、台湾、日本、韩国、印度、泰国和中东地区均未上架；应用界面也没有中文。",
-    avail_feste: "仅在德国上架；应用界面没有中文。",
 
     badge_dev: "开发中",
     footer_made: "在德国用心打造。",
