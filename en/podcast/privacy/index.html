@@ -28,106 +28,249 @@
     <a class="back" href="../../../">← Back</a>
     <a class="back lang" href="../../../podcast/privacy/">Deutsch</a>
     <h1>Privacy Policy for the “Podcasts AM” app</h1>
-<p><strong>Last updated:</strong> 27 June 2026</p>
-<p>This privacy policy explains how the “Podcasts AM” app for Android and iOS (the “app”) handles your data. It applies only to this app and not to any third-party websites, app stores or social media profiles.</p>
+<p><strong>Last updated:</strong> 22 October 2026</p>
+<p>This privacy policy explains what data the “Podcasts AM” app (the “app”) processes, which servers it connects to and what rights you have. It applies to the app on Android devices (Google Play) and on iPhone, iPad and Mac (App Store); according to the App Store, the iPad version can also be used on Apple Vision, where the same applies as for the iPad. It describes the current version of the app.</p>
+<p>Older versions still installed on devices may not yet include some of the functions described here. Some older versions, on the other hand, still include functions that no longer exist: an “Open in Apple Podcasts” button which, when you tap it, opens the show’s page on Apple Podcasts in the corresponding app or in your browser – only this action transmits data to Apple, and Apple’s terms apply (section 5) – and tip purchases, which Apple handles via the App Store as described in section 8.</p>
+<p>This policy applies only to the app. The website amapps.app is covered by the <a href="../../../datenschutz.html">website’s privacy policy</a> (in German); app stores and third-party services are governed by their own terms.</p>
 <hr>
 <h2>1. Controller</h2>
-<p>The controller within the meaning of the General Data Protection Regulation (GDPR), and service provider under § 5 of the German Digital Services Act (DDG), is:</p>
+<p>The controller within the meaning of the General Data Protection Regulation (GDPR), and service provider under § 5 of the German Digital Services Act (Digitale-Dienste-Gesetz – DDG), is:</p>
 <p><strong>Andreas Maier</strong></p>
 <p>Dürerstr. 14, 73547 Lorch, Germany</p>
 <p>Email: <a href="mailto:support@amapps.app">support@amapps.app</a></p>
 <hr>
 <h2>2. No Data Protection Officer</h2>
-<p>No data protection officer has been appointed under Art. 37 GDPR, as there is no legal obligation to do so (individual developer, no large-scale processing of personal data). For privacy questions, please contact the controller directly.</p>
+<p>No data protection officer has been appointed under Art. 37 GDPR, as there is no legal obligation to do so (individual developer, no large-scale processing of personal data). For privacy questions, please contact the controller named above directly.</p>
 <hr>
-<h2>3. Overview and principle</h2>
-<p>“Podcasts AM” is a privacy-friendly podcast player. The controller operates <strong>no servers of its own</strong> and does <strong>not itself collect, receive or store any personal data</strong> of users.</p>
+<h2>3. Key points in brief</h2>
 <ul>
-<li>There is <strong>no registration, no user account and no sign-in</strong>.</li>
-<li>The app contains <strong>no analytics or tracking SDKs, no advertising, no advertising IDs and no crash reporting</strong> to third parties. No usage profiles are created.</li>
-<li>Your subscriptions, downloaded episodes, playback position and settings are stored <strong>exclusively locally on your device</strong> (local database/file system) and do not leave the device.</li>
+<li>There is <strong>no user account, no registration and no sign-in</strong>.</li>
+<li>The app contains <strong>no analytics, tracking or advertising software, no advertising and no crash reporting</strong> (for Google’s billing library on Android, see section 8). It uses <strong>no advertising ID and no device or installation identifier</strong>. No usage profiles are created.</li>
+<li>The app stores your subscribed shows, downloads, playback positions, bookmarks and settings <strong>only on your device</strong> (section 10, which also covers device backups). It does not transmit this data as a whole, not even to the controller. Individual items from it do, however, become visible in the requests a function needs: for example the selected country or – because the app loads the cover art of your subscribed shows and, if you have turned on automatic downloads, fetches their details and feeds – which shows you have subscribed to (sections 5 and 7).</li>
+<li>To find and play podcasts, <strong>the app fetches content from the internet</strong>: from Apple (directory, charts, search), from the podcasters’ servers (feeds, audio, images) and from two addresses of the controller (daten.amapps.app and amapps.app), which are hosted by external providers. Purchases go through the App Store or Google Play.</li>
+<li>In doing so, the app’s code <strong>uploads nothing from your device</strong> (for Google’s billing library on Android, see section 8). For technical reasons, however, each server contacted inevitably learns your IP address, the time, the requested address and a technical identifier (section 4).</li>
+<li>The controller analyses neither individual requests nor where they come from, and does not try to link them to a person. Through the app itself, personal data reaches the controller only if you email the controller (section 9.2). The connection data of requests to daten.amapps.app is processed by Cloudflare on the controller’s behalf (section 6.3). What Apple and Google make available to the controller as the app’s developer is governed by their terms (sections 8 and 14).</li>
+<li>The controller does not sell any data and does not share any data for advertising, analytics or tracking purposes.</li>
+<li>Where processing is based on legitimate interests, you can <strong>object to it at any time</strong> (section 16).</li>
 </ul>
-<p>Unlike a purely offline app, however, “Podcasts AM” establishes <strong>connections to third-party servers</strong> in order to fulfil its purpose (podcast charts, search, playback and download of episodes). As is technically unavoidable for any internet connection, your <strong>IP address</strong> is transmitted to the third-party servers contacted. This data is <strong>not sent to the controller</strong>; it is processed by the respective third-party servers under their own responsibility. See section 4 for details.</p>
 <hr>
-<h2>4. Connections to third parties and data transmission</h2>
-<p>The following connections are required for the app’s core functions. In each case your IP address and technical connection data (e.g. time of the request, content requested, possibly a client identifier “user agent”) are transmitted. The controller does not receive or store this data.</p>
-
-<h3>4.1 Podcast charts and search (Apple)</h3>
-<p>To show popular podcasts/episodes and for search, the app queries Apple’s public interfaces (Apple “iTunes Search/Lookup” API and the “Marketing Tools / Top Podcasts” RSS endpoints).</p>
+<h2>4. Connections to the internet – overview</h2>
+<p>The app connects only to the parties listed below. The app’s code only fetches content from them; it does not send forms, files from your device or usage statistics of its own (for Google’s billing library on Android, see section 8). What a server learns comes solely from the request itself – and that includes which content you fetch:</p>
 <ul>
-<li><strong>Recipient:</strong> Apple Inc., One Apple Park Way, Cupertino, CA 95014, USA, as a separate controller. <a href="https://www.apple.com/legal/privacy/">Apple’s Privacy Policy</a> applies.</li>
-<li><strong>International transfer:</strong> requests may be routed to servers in the USA. According to Apple, international transfers from the EEA are based on the EU Commission’s <strong>Standard Contractual Clauses</strong> (Art. 46 GDPR).</li>
-<li><strong>Purpose:</strong> retrieving the publicly available chart and search results.</li>
-<li><strong>Legal basis:</strong> Art. 6(1)(b) GDPR (providing the function you requested) and Art. 6(1)(f) GDPR (legitimate interest in the technically necessary delivery of content). No profiling takes place.</li>
+<li><strong>Your IP address.</strong> No internet connection is possible without it. It can be used to infer roughly which country or region a request comes from.</li>
+<li><strong>The time</strong> of the request.</li>
+<li><strong>The requested address.</strong> It may contain information such as the selected country, your search term or the identifier of a show or episode (details in the following sections).</li>
+<li><strong>A technical identifier (“user agent”).</strong> When contacting daten.amapps.app, the app identifies itself as “PodcastsAM/&lt;version&gt;+&lt;build&gt; (+https://amapps.app)”; when fetching excerpts from the podcasters’ servers, currently as “PodcastsAM/1.0 (+https://amapps.app)”. All other requests made by the app carry the generic identifier of the Dart programming environment (“Dart/&lt;version&gt; (dart:io)”), which does not reveal the app’s name. Video episodes are played by the Android or Apple system player with its own identifier.</li>
 </ul>
-
-<h3>4.2 Playback and download of episodes (podcast hosts)</h3>
-<p>When you play or download an episode, your device connects <strong>directly</strong> to the RSS/media server (host or content delivery network) of the respective podcast. The audio is obtained directly from there; the controller does <strong>not re-host</strong> any content.</p>
-<ul>
-<li><strong>Recipient:</strong> the respective operator of the podcast feed or hosting/CDN provider, as a separate controller. These providers are located worldwide; their own privacy terms apply, over which the controller has no influence.</li>
-<li><strong>Purpose:</strong> streaming or downloading the episode you selected.</li>
-<li><strong>Legal basis:</strong> Art. 6(1)(b) and (f) GDPR (providing the requested function / technically necessary content delivery).</li>
-</ul>
-
-<h3>4.3 “Open in Apple Podcasts”</h3>
-<p>Using the corresponding button opens, at your request, the related Apple Podcasts page in an external app or your default browser. Only through this action initiated by you is data transmitted to Apple; Apple’s privacy terms then apply. <strong>Legal basis:</strong> Art. 6(1)(f) GDPR (legitimate interest in the requested link).</p>
-
-<blockquote>
-<p>Note: beyond the connections described in this section that are required for functionality, <strong>no</strong> internet data transmission takes place. No data is transmitted for advertising, analytics or tracking purposes.</p>
-</blockquote>
-<hr>
-<h2>5. Local storage on your device</h2>
-<p>The following is stored <strong>exclusively locally</strong> on your device (local database/file system) and is not transmitted to the controller or third parties:</p>
-<ul>
-<li>subscribed (followed) podcasts,</li>
-<li>downloaded episodes (audio files for offline playback),</li>
-<li>the most recent playback position,</li>
-<li>app settings (e.g. selected country/storefront).</li>
-</ul>
-<p>You can remove this data at any time yourself – by deleting individual subscriptions/downloads in the app, or by uninstalling the app or clearing the app data in your device settings.</p>
-<p><strong>Legal basis:</strong> Art. 6(1)(f) GDPR (legitimate interest in providing the app functions you requested). Processing takes place exclusively locally on your device.</p>
-<hr>
-<h2>6. App permissions at a glance</h2>
+<p>The app’s code does not send any account information, device or advertising identifier, usage statistics or crash reports. The exception is the logging data that Google’s billing library transmits to Google on Android (section 8).</p>
 <table>
-<tr><th>Function / permission</th><th>Purpose</th><th>Note</th></tr>
-<tr><td>Internet/network access</td><td>Retrieving charts/search (Apple) and playback/download of episodes (podcast hosts)</td><td>Transmits your IP to the contacted third-party servers; nothing is transmitted to the controller</td></tr>
-<tr><td>Foreground service “media playback” (Android)</td><td>Background playback and control via lock screen/notification</td><td>Local playback control only, no data transmission</td></tr>
-<tr><td>Notifications (playback notification)</td><td>Showing the playback controls as a notification</td><td>Local, no server-side push service</td></tr>
+<tr><th>Server contacted</th><th>When</th><th>What it learns beyond IP address and time</th></tr>
+<tr><td>Apple – directory, charts, search, cover art (section 5)</td><td>every time the app starts (charts, cover art of your subscribed shows, where applicable the show you last opened); when you search; when you open a show; when you start an episode from the excerpts area; during automatic downloads</td><td>selected country, search term, show ID numbers, which cover art is fetched</td></tr>
+<tr><td>daten.amapps.app – additional content (section 6.1)</td><td>every time the app starts, including for the show or episode you last opened; when you open covered shows and episodes; before excerpts are played</td><td>selected country, which covered shows and episodes you open, app version</td></tr>
+<tr><td>amapps.app – purchase page settings (section 6.2)</td><td>every time the app starts; when you return to the app, at most once an hour after the last successful fetch</td><td>only the request itself; no parameters</td></tr>
+<tr><td>Servers of the podcasters and their service providers (section 7)</td><td>every time the app starts (images for your downloads, for the episode you last listened to and on the excerpts button; where applicable the feed of the show you last opened); when you open a show, when you play and download, for excerpts and during automatic downloads</td><td>which episode, file or image is fetched; for excerpts also the app’s name</td></tr>
+<tr><td>App Store or Google Play (section 8)</td><td>every time the app starts; when you return to the app or open the purchase page, if the offers are still missing; on Android additionally every time you return to the app; when you purchase and when you restore purchases</td><td>the request for the offers; when you purchase, when you restore and, on Android, every time the app starts and every time you return to it, also the purchases of your store account</td></tr>
 </table>
+<h3>Security and encryption</h3>
+<p>The app fetches the controller’s addresses and Apple’s APIs and image servers over encrypted connections (HTTPS). For the podcasters’ servers, this depends on the addresses they publish: because many podcast feeds still use unencrypted “http” addresses, the app allows such connections on all platforms. In that case, third parties on the same network (for example on public Wi-Fi) or your internet provider can see which file is being fetched.</p>
+<p>The app stores the data described in section 10 only in its own storage areas on the device, not in generally accessible folders, and does not share it with other apps; the protection of these areas is handled by Android, iOS and macOS. Payment data is processed solely by Apple and Google; the app does not see it. Because the app works without an account and sends no usage data to the controller, the controller – apart from support emails and the connection data that Cloudflare processes on the controller’s behalf (section 6.3) – holds no collection of data on the app’s users that could be lost or stolen.</p>
 <hr>
-<h2>7. Legal bases for processing (Art. 6 GDPR)</h2>
+<h2>5. Podcast directory, charts and search (Apple)</h2>
+<p>The app uses Apple’s public podcast directory. To do so, it queries Apple’s APIs (rss.marketingtools.apple.com for the charts, itunes.apple.com for search and show details) and loads cover art from Apple’s image servers (e.g. is1-ssl.mzstatic.com).</p>
 <ul>
-<li><strong>Art. 6(1)(b) GDPR</strong> – for the connections technically required to provide the functions you requested (charts, search, playback, download).</li>
-<li><strong>Art. 6(1)(f) GDPR (legitimate interest)</strong> – for technically necessary content delivery, for the opening of external content initiated by you, and for the local storage of your subscriptions, downloads, playback position and settings (legitimate interest: providing the requested app functions).</li>
+<li><strong>Charts:</strong> The app loads the charts for the selected country every time it starts – even if another area of the app is currently shown – as well as when you change the country and when you refresh. The country code is transmitted.</li>
+<li><strong>Cover art:</strong> The app loads the cover art in charts, search, show pages and your library from Apple’s image servers; it loads the cover art of your subscribed shows every time it starts, even if another area of the app is currently shown.</li>
+<li><strong>Search:</strong> When you search, your search term is transmitted to Apple together with the selected country as soon as you pause briefly while typing (after about 0.4 seconds) or repeat the search. It is used only to show you matching shows from Apple’s directory. The controller does not receive your search terms, and the app does not store them.</li>
+<li><strong>Show details:</strong> When you open a show, the app queries Apple with the show’s ID number and the selected country to obtain the address of the podcast feed. This also applies when, on start-up, the app restores the show page you left open last time. If you start an episode from the excerpts area, the app queries Apple in the same way to fill in the creator’s name.</li>
+<li><strong>Automatic downloads:</strong> If you have turned on this function in the settings (“Auto-download new episodes”; off by default), the app queries Apple for the details of <strong>each subscribed show</strong> every time it starts (ID number; the country is always “us”). Apple can therefore see which shows are queried from your IP address. The app then loads the feeds and, where applicable, the newest episode (section 7).</li>
+<li><strong>Country:</strong> Unless you choose a country yourself, the app uses the region from your device’s language settings or, failing that, the USA. It stores your choice on the device.</li>
+</ul>
+<p>The app does not store Apple’s responses as such. Only details of shows (name, creator, ID number, cover art address) that you have subscribed to, downloaded, last opened or last listened to are stored permanently, along with the cover art for the playback controls (section 10).</p>
+<ul>
+<li><strong>Recipient:</strong> Apple as a separate controller. According to Apple’s privacy policy, Apple Distribution International Ltd. (Ireland) is the controller for users in the European Economic Area; the data is usually stored by Apple Inc., One Apple Park Way, Cupertino, CA 95014, USA. <a href="https://www.apple.com/legal/privacy/">Apple’s Privacy Policy</a> applies.</li>
+<li><strong>Purpose:</strong> displaying charts, search results, show details and cover art; automatically downloading new episodes if you have turned this on.</li>
+<li><strong>Legal basis:</strong> Art. 6(1)(b) GDPR where you trigger the function yourself or have turned it on (search, opening a show or episode, automatic downloads). For the requests at start-up (charts, cover art, where applicable the show you last opened), Art. 6(1)(f) GDPR; the legitimate interest lies in being able to show you current charts, your library and the point where you left off as soon as you open the app.</li>
+<li><strong>Third country:</strong> For users in the European Economic Area, the recipient is Apple Distribution International Ltd. in Ireland. Where Apple passes the data on to Apple Inc. in the USA, Apple states that it relies on the European Commission’s Standard Contractual Clauses (Art. 46 GDPR).</li>
+<li><strong>Retention:</strong> according to Apple’s rules; the controller has no influence over this.</li>
 </ul>
 <hr>
-<h2>8. Recipients, international transfers and no tracking (Art. 13(1)(e), (f) GDPR)</h2>
-<p>The controller itself does <strong>not</strong> share any personal data with third parties and does not use any processors. The recipients in the context of the technically required connections (section 4) are exclusively:</p>
+<h2>6. Additional content and settings from amapps.app</h2>
+<p>The app fetches two kinds of files from the controller’s addresses. The controller does not run his own server for this; the files are hosted by hosting providers (section 6.3).</p>
+<h3>6.1 Additional content (daten.amapps.app)</h3>
+<p>For selected shows, the controller provides additional content at daten.amapps.app: short summaries, key points, chapters, show notes and lists of short excerpts from episodes with accompanying text. No audio files are stored there; the audio of the excerpts comes directly from the podcasters’ servers (section 7).</p>
 <ul>
-<li><strong>Apple Inc. (USA)</strong> – when retrieving charts/search; international transfer based on Standard Contractual Clauses (Art. 46 GDPR).</li>
-<li><strong>Operators of the podcast feeds / hosting or CDN providers (worldwide)</strong> – when streaming/downloading the episodes you choose.</li>
+<li><strong>When:</strong> every time the app starts (the list of covered shows and the excerpt list for the selected country), when you change the country and when you refresh; when you open a covered show (the show’s index and, where applicable, files for individual episodes) and when you open an episode in the player, including when, on start-up, the app restores the show you last opened or the player; for chapters, if the podcaster does not provide any; before an excerpt is played. As a rule, the app requests nothing there for shows that are not covered. Only if the list of covered shows cannot be read at that moment, although the server is responding, does the app send a request when you open a show or episode, using an identifier derived from the address of the podcast feed; this identifier, too, allows the show to be determined.</li>
+<li><strong>What is transmitted:</strong> IP address, time, the requested file and the user agent “PodcastsAM/&lt;version&gt;+&lt;build&gt; (+https://amapps.app)”, i.e. the app’s name, version and build number. The app appends no parameters and sends no account information and no device identifier. Because the file names contain the country or an identifier of the show or episode, the requests do, however, reveal <strong>which country you have selected and which covered shows and episodes you open</strong>.</li>
+<li><strong>On the device:</strong> The app keeps the responses only in memory, for at most one hour, and the excerpt list until the app is closed. It stores none of them on disk.</li>
+<li><strong>Purpose:</strong> providing the additional content and excerpts. The name and version in the user agent identify the requests as coming from this app; this is intended to make it possible later to tell when older versions of the app are no longer in use. The controller does not currently analyse this information; this policy will be updated before that changes.</li>
+<li><strong>Legal basis:</strong> Art. 6(1)(b) GDPR where you open a show, an episode or an excerpt. For the requests at start-up and the inclusion of name and version in the user agent, Art. 6(1)(f) GDPR; the legitimate interest lies in showing additional content and excerpts without delay and in identifying the requests as coming from this app and its version.</li>
 </ul>
-<p>These parties act as their own controllers. No sharing for advertising, analytics or tracking purposes takes place; no advertising IDs are processed and no third-party data-collection SDKs are included.</p>
+<h3>6.2 Purchase page settings (amapps.app)</h3>
+<p>Every time the app starts and when you return to the app – in that case at most once an hour after the last successful fetch – the app loads the file https://amapps.app/podcast-am/paywall.json. It determines how the purchase page is designed, how often it appears and whether subscriptions are offered there.</p>
+<ul>
+<li><strong>What is transmitted:</strong> only the technically necessary connection data (IP address, time, the fixed address of the file, user agent “Dart/&lt;version&gt; (dart:io)”). The app appends no parameters. The file contains settings for different regions; the app decides on the device which of them applies, based on your device’s region setting. Your region is not transmitted.</li>
+<li><strong>On the device:</strong> The app stores the most recently loaded file until it receives a newer one.</li>
+<li><strong>Purpose and legal basis:</strong> Art. 6(1)(f) GDPR; the legitimate interest lies in being able to adjust the purchase page without an app update.</li>
+</ul>
+<h3>6.3 Hosting providers</h3>
+<ul>
+<li><strong>Cloudflare, Inc. (USA) – processor.</strong> Cloudflare receives all requests to daten.amapps.app, provides the encrypted connection to the app and forwards the requests to GitHub Pages. Cloudflare processes the connection data on behalf of the controller; the data processing agreement (Art. 28 GDPR) is part of Cloudflare’s terms. Cloudflare automatically compiles aggregated statistics from the connection data, such as the number of requests. The controller analyses neither individual requests nor the countries they come from, and does not use the connection data to determine anyone’s location. Cloudflare is not involved for amapps.app (section 6.2). <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare’s Privacy Policy</a> applies.</li>
+<li><strong>GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA (part of Microsoft Corporation) – GitHub Pages, separate controller for the access data.</strong> GitHub stores the files and delivers them: directly for amapps.app, and behind Cloudflare for daten.amapps.app. Apart from what the delivery of the files involves, the controller passes no data to GitHub. According to GitHub’s <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages">documentation on GitHub Pages</a>, GitHub logs the IP address for security purposes when GitHub Pages sites are accessed. GitHub processes this access data under its own responsibility; the controller does not receive it. GitHub may receive your IP address even for requests made via Cloudflare, because Cloudflare passes it on to the destination server by default. For delivery, GitHub in turn uses service providers, including Fastly (USA). <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub’s Privacy Statement</a> applies.</li>
+<li><strong>Legal basis:</strong> Art. 6(1)(f) GDPR; the legitimate interest lies in providing the files reliably, securely and at low cost without the controller having to run his own server.</li>
+<li><strong>Third country:</strong> Cloudflare and GitHub are certified under the EU-U.S. Data Privacy Framework. The transfer is therefore based on the European Commission’s adequacy decision (Art. 45 GDPR).</li>
+<li><strong>Retention:</strong> According to Cloudflare, it keeps the connection data on behalf of the controller only for as long as necessary for its services, i.e. for delivery, security and the aggregated statistics; Cloudflare does not publicly state a fixed period. GitHub keeps its access logs according to its own rules; GitHub does not publicly state a fixed period either.</li>
+</ul>
 <hr>
-<h2>9. App stores and operating system</h2>
-<p>The app is obtained and updated via the respective app store (Google Play or Apple App Store). The operators of these stores and your device’s operating system may independently collect data over which the controller has no influence. The privacy terms of <a href="https://policies.google.com/privacy">Google</a> and <a href="https://www.apple.com/legal/privacy/">Apple</a> apply.</p>
+<h2>7. Podcasters’ servers: feeds, playback, downloads and excerpts</h2>
+<p>The podcasts themselves do not come from the controller. Your device loads feeds, audio and video files, chapters and images <strong>directly</strong> from the servers that the podcasters specify in their feeds. The controller does not provide any of these files himself and receives nothing from these connections. For excerpts, however, the address requested, the section of the file, the image address and the user agent are taken from the files on daten.amapps.app (section 6.1).</p>
+<ul>
+<li><strong>Feed:</strong> when you open a show – including when, on start-up, the app restores the show you last opened – and during automatic downloads (section 5). The server does not learn the app’s name in this case.</li>
+<li><strong>Chapters and images:</strong> The app loads images of episodes, chapters and excerpts, and where applicable the podcaster’s own chapter files, directly from the respective server. Right at start-up, it loads the images shown for your downloads, for the episode you last listened to and on the excerpts button, even if another area of the app is currently shown. The image servers can tell from this which images are being fetched from your IP address.</li>
+<li><strong>Playback:</strong> The app loads streamed audio episodes through a cache that can be reached only from within your device (address 127.0.0.1). Video episodes are played directly by the Android or Apple system player. If loading is interrupted for an episode you are currently listening to, the app checks every five seconds, for up to five minutes, whether the server is responding again by requesting the first byte of the file, and then resumes playback.</li>
+<li><strong>Downloading:</strong> The app downloads the episode’s file from the podcaster’s server. Only for video episodes does it first query the file size and ask you to confirm the download. It plays downloaded episodes without an internet connection.</li>
+<li><strong>Excerpts:</strong> In the excerpts area, the app loads short portions of the audio files directly from the podcasters’ servers – for the excerpt shown and, in advance, for the following ones. In doing so, it identifies itself with the user agent “PodcastsAM/1.0 (+https://amapps.app)”; the podcasters can therefore tell that the request comes from this app.</li>
+<li><strong>Podcasters’ service providers:</strong> Many podcasters route the addresses of their episodes through audience measurement or redirect services (for example Podtrac) and have their files delivered by hosting services (for example Libsyn, Megaphone or Podigee). These services then also receive the request. Which services are involved is decided by the podcaster, not by the controller.</li>
+</ul>
+<ul>
+<li><strong>Recipients:</strong> the operators of the podcast servers and their service providers as separate controllers. They are located worldwide; their own privacy terms apply, over which the controller has no influence.</li>
+<li><strong>Purpose:</strong> displaying, playing and downloading the content you choose.</li>
+<li><strong>Legal basis:</strong> Art. 6(1)(b) GDPR (the function you requested). For the requests at start-up (images, where applicable the feed of the show you last opened), preloading the following excerpts and the check after loading has been interrupted, Art. 6(1)(f) GDPR; the legitimate interest lies in showing you your library and the point where you left off as soon as you open the app, and in smooth playback with as few interruptions as possible.</li>
+<li><strong>Third country:</strong> The servers may also be located outside the EU, including in countries without an adequacy decision. Your device fetches the content from them directly, just as when you visit a website; the servers receive only the information contained in the request itself (section 4). The controller does not pass any further data on to them; in the controller’s view, this therefore does not constitute a transfer by the controller to a third country. For shows and episodes, you choose the content yourself; which shows the excerpts come from is selected by the controller. The controller has no contracts with the podcasters or their service providers.</li>
+<li><strong>Retention:</strong> according to the rules of the respective providers.</li>
+</ul>
 <hr>
-<h2>10. Retention and deletion</h2>
-<p>The controller stores <strong>no</strong> personal data; no server-side storage takes place. The data stored locally on your device (section 5) remains there until you delete it yourself (in the app or by uninstalling). At the third-party servers mentioned in section 4, storage (e.g. of server logs) is governed by the respective providers’ terms.</p>
+<h2>8. In-app purchases (App Store and Google Play)</h2>
+<p>In the app you can purchase “Podcasts AM Pro” – depending on what is on offer, as a one-time purchase or as a monthly or yearly subscription. Which offers the purchase page currently shows is controlled by the settings described in section 6.2.</p>
+<ul>
+<li><strong>Handling:</strong> On iPhone, iPad and Mac, Apple handles the purchase via the App Store; on Android, Google does so via Google Play. Payment, billing, subscription management, cancellation and refunds are handled by Apple or Google as separate controllers under their own terms and privacy policies (<a href="https://www.apple.com/legal/privacy/">Apple</a>, <a href="https://policies.google.com/privacy">Google</a>).</li>
+<li><strong>What the app learns:</strong> the offers with their prices – including an introductory offer such as a trial period, if the store offers you one – as well as whether a purchase has been completed or restored and which product it concerns. The app does not receive your name, your email address or your payment details. It does not read receipts, transaction IDs or purchase tokens; it does not give the store any identifier of its own for you and sends none of this to a server of the controller. There is no server-side verification of purchases; the app relies on the purchase status reported by the store.</li>
+<li><strong>What the controller learns:</strong> The app does not report any purchases to the controller. Which information about sales Apple and Google make available to the controller as the app’s developer, for example for billing and tax purposes, is governed by their terms.</li>
+<li><strong>On the device:</strong> Only the fact that Pro is unlocked and the identifier of the product used to unlock it are stored.</li>
+<li><strong>Connection to the store:</strong> Every time it starts, the app loads the current offers from the store, even if you already have Pro. If it could not load the offers, it tries again when you open the purchase page and when you return to the app. On Android, it also asks Google Play every time it starts and every time you return to the app which purchases belong to your Google Play account. This allows it to acknowledge pending purchases (Google Play otherwise refunds unacknowledged purchases after three days) and to unlock Pro again after a reinstallation. Using “Restore Purchases” on the purchase page, you can retrieve earlier purchases yourself at any time.</li>
+<li><strong>Manage subscription (Android only):</strong> If Pro comes from a subscription, “Manage subscription” in the settings opens Google Play’s subscription management; the address contains the identifier of the subscription and of the app.</li>
+<li><strong>Google’s billing library:</strong> The Android version includes Google’s library for purchases (Google Play Billing Library). According to Google’s release notes, since version 6 it logs whether its calls succeed or fail and whether there are problems with the connection to Google Play. Google uses this information to improve the library and to help with troubleshooting. It is transmitted to Google via Google components, not to the controller; Google processes it under its own terms and under its own responsibility.</li>
+<li><strong>Legal basis:</strong> Art. 6(1)(b) GDPR for the purchase, unlocking, acknowledgement and restoring purchases at your request. For loading the offers every time the app starts and, on Android, for automatically checking your purchases every time the app starts and every time you return to it, Art. 6(1)(f) GDPR. The legitimate interest lies in always showing current prices on the purchase page, acknowledging pending purchases in time and unlocking Pro again after a reinstallation without any action on your part.</li>
+<li><strong>Third country:</strong> For Apple, the recipient in the European Economic Area is Apple Distribution International Ltd. (Ireland); for passing data on to Apple Inc. (USA), Apple states that it uses Standard Contractual Clauses (Art. 46 GDPR). Where data goes to Google LLC in the USA, Google LLC is certified under the EU-U.S. Data Privacy Framework (adequacy decision, Art. 45 GDPR).</li>
+</ul>
 <hr>
-<h2>11. Your rights as a data subject</h2>
-<p>Under the GDPR you have – subject to the respective legal requirements – the right of access (Art. 15), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20) and a right to object (Art. 21). As the controller does not itself collect or store any personal data, such requests will in substance relate primarily to the data held locally on your device, which you can view and delete yourself at any time.</p>
-<p>There is <strong>no automated decision-making, including profiling</strong>, within the meaning of Art. 22 GDPR.</p>
-<p>You also have the right to lodge a complaint with a <strong>data protection supervisory authority</strong> (Art. 77 GDPR), in particular in the Member State of your residence or workplace.</p>
+<h2>9. Other functions</h2>
+<h3>9.1 Rating prompt (iPhone, iPad and Mac only)</h3>
+<p>On iPhone, iPad and Mac, the app occasionally uses Apple’s own rating prompt to ask for a rating in the App Store – only after at least five days, three starts and 60 minutes of listening time, and no more than once every 90 days. The app checks these conditions using counters on the device (section 10). The app does not learn whether or how you rate it; the rating is processed by Apple. No rating prompt appears on Android. <strong>Legal basis:</strong> Art. 6(1)(f) GDPR; the legitimate interest lies in asking satisfied users for a rating at a suitable moment without disturbing them.</p>
+<h3>9.2 Email to support</h3>
+<p>Via “Email support” in the menu and via “Why? Tell us” next to the “Player page” setting, the app opens a draft email to support@amapps.app in your email app. It is pre-filled with a subject line, the app version and build number, and the operating system and its version; for “Why? Tell us”, also with the player page layout you have selected. You can edit or discard the draft before sending it. The app itself sends nothing. Only when you send the email does the controller receive your email address, where applicable the name stored in your email app, the content and this information.</p>
+<ul>
+<li><strong>Purpose:</strong> handling and answering your enquiry, troubleshooting.</li>
+<li><strong>Legal basis:</strong> Art. 6(1)(f) GDPR; the legitimate interest lies in answering your enquiry and fixing errors in the app. If your enquiry concerns a purchase, additionally Art. 6(1)(b) GDPR.</li>
+<li><strong>Recipients:</strong> The support@amapps.app mailbox is hosted on Apple’s iCloud Mail (Apple Distribution International Ltd., Ireland; Apple Inc., USA). Apple receives and stores the email there under its <a href="https://www.apple.com/legal/privacy/">Privacy Policy</a>. For transfers to the USA, Apple states that it uses Standard Contractual Clauses (Art. 46 GDPR). Your own email provider also processes the email, under its own terms.</li>
+<li><strong>Retention:</strong> for as long as necessary to handle your enquiry; the email is then deleted unless statutory retention obligations apply.</li>
+</ul>
+<h3>9.3 Sharing the app and external links</h3>
+<p>“Share the app” opens your device’s share menu with a short text and the link https://amapps.app/podcast-am/get. You decide where to send it; the app itself transmits nothing in the process. The text contains no information about shows, episodes or your usage.</p>
+<p>When you tap the relevant link, the app also opens this privacy policy, Apple’s standard licence terms (“Terms &amp; Conditions” on the purchase page on iOS and macOS) and Google Play’s subscription management (section 8) in your browser or the corresponding app. The app itself transmits nothing in the process. The data processed there is governed by the terms of the respective providers, and for amapps.app by the <a href="../../../datenschutz.html">website’s privacy policy</a> (in German).</p>
 <hr>
-<h2>12. Children</h2>
-<p>The app is not specifically directed at children and does not knowingly collect personal data from children. As the controller collects no data, no age-related data is processed.</p>
+<h2>10. Local storage on your device</h2>
+<p>The app stores the following data only on your device – in a local database, in the app settings and as files. The app does not transmit this data as a whole either to the controller or to third parties, and the controller has no access to it. Individual items from it do, however, feed into the requests described in sections 5 to 8: above all the selected country. In addition, the requests for cover art and images at start-up and, if you have turned it on, automatic downloading reveal which shows you have subscribed to or downloaded. The stored data does not include an account, your name, your email address or a device identifier.</p>
+<table>
+<tr><th>Data</th><th>Purpose</th><th>How long</th></tr>
+<tr><td>Subscribed shows (name, creator, cover art address, ID number and address at Apple, date of subscription)</td><td>your library</td><td>until you unsubscribe from the show</td></tr>
+<tr><td>Downloaded episodes (audio file as well as title, duration, date, image and show details)</td><td>listening without an internet connection</td><td>until you delete the download</td></tr>
+<tr><td>Playback positions (episode address, position, duration, time)</td><td>resuming at the right point</td><td>cannot be deleted individually in the app; they remain until you clear the app data or remove the app</td></tr>
+<tr><td>Bookmarks (episode, position, title, time)</td><td>marking points in episodes</td><td>until you delete the bookmark</td></tr>
+<tr><td>Last opened: area of the app, selected country, show, episode and whether the player was open</td><td>picking up where you left off after a restart</td><td>continuously overwritten</td></tr>
+<tr><td>Settings (e.g. skip intro, automatic downloads, text size, player behaviour, player page layout) and whether usage hints have already been shown</td><td>your settings</td><td>until you change them or clear the app data</td></tr>
+<tr><td>Pro status and the identifier of the product used to unlock Pro</td><td>unlocking Pro</td><td>until you clear the app data; can then be retrieved again via “Restore Purchases”</td></tr>
+<tr><td>Purchase page settings (section 6.2) and counters for app starts and for how often the purchase page has been shown</td><td>showing the purchase page at the configured frequency</td><td>overwritten or incremented until you clear the app data</td></tr>
+<tr><td>One-time flag indicating whether the app was already used on this device before the selectable player page was introduced</td><td>default for the player page: existing users keep the familiar layout, new users get the new one; you can change it in the settings at any time</td><td>until you clear the app data</td></tr>
+<tr><td>Counters for the rating prompt (date of first use, starts, listening time up to 60 minutes, time of the last prompt)</td><td>timing of the rating prompt (section 9.1); on Android, only the date of first use is stored</td><td>until you clear the app data</td></tr>
+<tr><td>For automatic downloads: for each show, the episode most recently downloaded automatically</td><td>avoiding duplicate downloads</td><td>overwritten</td></tr>
+<tr><td>Technical flag: at most 200 shows whose audio files have a large header</td><td>reliable playback</td><td>until you clear the app data</td></tr>
+<tr><td>Cache of the episode currently playing</td><td>playback while streaming</td><td>deleted as soon as another episode starts or an error occurs</td></tr>
+<tr><td>Cache for excerpts</td><td>quick replay without contacting the podcaster’s server again</td><td>around 33 MB, briefly somewhat more between two clean-up runs; each excerpt for at most 7 days; the system may clear it at any time</td></tr>
+<tr><td>Cover art of the episode currently playing, for the lock screen and notification</td><td>display in the system’s playback controls</td><td>up to 30 days, at most 200 images</td></tr>
+</table>
+<p>The app keeps all other responses from Apple and daten.amapps.app and all other images only in memory; they are discarded at the latest when the app is closed.</p>
+<p><strong>Deletion:</strong> You can delete subscribed shows (by unsubscribing from the show), downloads and bookmarks individually in the app. You can remove all other data by deleting the app from your device or, on Android, by clearing the app’s data in the device settings. On the Mac, the app’s data folder may remain after the app has been deleted (in the “Library/Containers” folder within your user folder); you can delete it there yourself. Copies in a device backup remain until you delete the backup or it is replaced.</p>
+<p><strong>Device backup:</strong> The app does not exclude this data from your device’s backup. If you use, for example, iCloud Backup, Google backup or, on the Mac, Time Machine, the database, the settings and – on iPhone, iPad and Mac – also downloaded episodes and the cache of the episode currently playing may become part of your backup. The cache for excerpts is not included. The backup is then stored in your Apple or Google account or on your own backup drive, not with the controller; backups with Apple and Google are governed by their terms.</p>
+<p><strong>Legal basis:</strong> Art. 6(1)(b) GDPR for the data resulting from your use (subscribed shows, downloads, positions, bookmarks, last opened items, settings including the flag for the player page default, Pro status, the technical flags for automatic downloads and playback, caches). For the counters for the purchase page and the rating prompt, Art. 6(1)(f) GDPR; the legitimate interest lies in showing the purchase page and the rating prompt in moderation and not too often.</p>
+<p><strong>Storing and reading information on your device (§ 25 TDDDG):</strong> The app stores the information listed above on your device, reads it back and reads your device’s region setting (sections 5 and 6.2). It does so in order to provide the app functions you use (§ 25(2) no. 2 of the German Telecommunications Digital Services Data Protection Act, TDDDG).</p>
 <hr>
-<h2>13. Changes to this privacy policy</h2>
+<h2>11. App permissions at a glance</h2>
+<table>
+<tr><th>Platform and permission</th><th>Purpose</th><th>Note</th></tr>
+<tr><td>All: internet access</td><td>connections described in sections 4 to 8</td><td>see there</td></tr>
+<tr><td>Android: foreground service “media playback”</td><td>background playback; control via lock screen, notification, headphones and Bluetooth</td><td>local; the playback controls appear as a notification, no push service is integrated</td></tr>
+<tr><td>Android: keep the device awake (“wake lock”)</td><td>so that playback continues while the screen is off</td><td>local</td></tr>
+<tr><td>Android: billing via Google Play</td><td>in-app purchases (section 8)</td><td>comes with Google’s billing library</td></tr>
+<tr><td>Android: access network state</td><td>requested by Google components of the billing library</td><td>local</td></tr>
+<tr><td>iPhone and iPad: background audio</td><td>playback while the screen is locked</td><td>local</td></tr>
+<tr><td>Mac: App Sandbox with outgoing connections and a local server</td><td>connections described in sections 4 to 8; the local server is used only for playback within the app</td><td>reachable only from the Mac itself (127.0.0.1), not from outside</td></tr>
+<tr><td>All: unencrypted connections (“http”) allowed</td><td>podcasts whose addresses do not yet use “https”</td><td>see section 4</td></tr>
+</table>
+<p>The app does not request permissions for location, camera, microphone, contacts, photos or files. On iPhone and iPad, it does not ask for permission to track you and does not use an advertising ID.</p>
+<hr>
+<h2>12. Recipients and transfers to third countries</h2>
+<p>The controller does not sell any data and does not share any data with third parties for advertising, analytics or tracking purposes. Only the following parties receive data, and only to the extent described.</p>
+<h3>Processors (acting on behalf of and on the instructions of the controller)</h3>
+<ul>
+<li><strong>Cloudflare, Inc. (USA)</strong> – provision of daten.amapps.app (section 6.3). Third country: adequacy decision on the EU-U.S. Data Privacy Framework (Art. 45 GDPR).</li>
+</ul>
+<h3>Separate controllers (acting under their own privacy terms)</h3>
+<ul>
+<li><strong>Apple</strong> (Apple Distribution International Ltd., Ireland; Apple Inc., USA) – directory, charts, search and cover art (section 5), as well as the App Store, purchases and the rating prompt on iPhone, iPad and Mac (sections 8 and 9.1). Third country: the recipient in the European Economic Area is Apple Distribution International Ltd. (Ireland); for passing data on to Apple Inc. (USA), Apple states that it uses Standard Contractual Clauses (Art. 46 GDPR).</li>
+<li><strong>Google</strong> (Google LLC, USA, or the Google company responsible for your region according to Google’s Privacy Policy) – Google Play, purchases and the billing library’s logs on Android (section 8). Third country: where data goes to Google LLC in the USA, adequacy decision on the EU-U.S. Data Privacy Framework (Art. 45 GDPR).</li>
+<li><strong>GitHub, Inc. (USA)</strong> – hosting service on which the files of amapps.app and daten.amapps.app are stored (GitHub Pages, section 6.3). Apart from what the delivery of the files involves, the controller passes no data to GitHub. Only the access data generated when the files are fetched, in particular the IP address, is processed by GitHub as a separate controller, for the security of its services; the controller does not receive it. For delivery, GitHub uses service providers such as Fastly (USA). Third country: adequacy decision on the EU-U.S. Data Privacy Framework (Art. 45 GDPR).</li>
+<li><strong>Operators of the podcast servers and their service providers</strong> (worldwide) – feeds, audio, chapters, images and excerpts (section 7). Third country: this includes countries without an adequacy decision; the servers receive only the information contained in the request that your device sends directly to them (section 7).</li>
+</ul>
+<p>Your emails to support (section 9.2) are received and stored by Apple via iCloud Mail, where the support@amapps.app mailbox is hosted.</p>
+<hr>
+<h2>13. Retention</h2>
+<ul>
+<li><strong>On your device:</strong> as described in section 10, until you delete the data or remove the app. The app limits the caches automatically.</li>
+<li><strong>With the controller:</strong> The app sends the controller no data about your usage, and the controller does not keep any such data himself. Support emails are kept for as long as necessary to handle them and are then deleted unless statutory retention obligations apply.</li>
+<li><strong>With Cloudflare (on behalf of the controller):</strong> According to Cloudflare, it keeps the connection data of requests to daten.amapps.app only for as long as necessary for delivery, security and the aggregated statistics (section 6.3); Cloudflare does not publicly state a fixed period.</li>
+<li><strong>With GitHub:</strong> according to GitHub’s rules as a separate controller; GitHub does not publicly state a fixed period.</li>
+<li><strong>With Apple, Google and the podcast servers:</strong> according to the rules of the respective providers, over which the controller has no influence.</li>
+</ul>
+<hr>
+<h2>14. App stores and operating system</h2>
+<p>The app is obtained and updated via Google Play or the App Store. The store operators and your device’s operating system may independently collect data over which the controller has no influence. The privacy terms of <a href="https://policies.google.com/privacy">Google</a> or <a href="https://www.apple.com/legal/privacy/">Apple</a> apply. What Apple and Google make available to the controller as the app’s developer, such as sales overviews or – depending on your device settings – crash reports, is likewise governed by their terms.</p>
+<p>So that you can control playback via the lock screen, notification, headphones or Bluetooth, the app passes the title and cover art of the episode currently playing to the operating system. The share menu and your email app are likewise functions of the operating system or of other apps.</p>
+<hr>
+<h2>15. Your rights</h2>
+<p>Under the GDPR you have – subject to the respective legal requirements – the right of access (Art. 15), to rectification (Art. 16), to erasure (Art. 17), to restriction of processing (Art. 18) and to data portability (Art. 20), as well as the right to object under Art. 21 (section 16). The app does not base any processing on consent.</p>
+<p>To exercise these rights, simply write to <a href="mailto:support@amapps.app">support@amapps.app</a>; no particular form is required. As the app works without an account, the controller generally cannot link the app’s requests to a person (Art. 11 GDPR). You can, however, provide additional information that makes this possible; your rights under Art. 15 to 20 GDPR then apply to that extent as well (Art. 11(2) GDPR). The controller will provide you with information about the emails you have sent to him. You can view and delete the data on your device (section 10) yourself at any time. You can also exercise your rights directly against Apple, Google, GitHub and the podcast providers.</p>
+<hr>
+<h2>16. Right to object under Art. 21 GDPR</h2>
+<p><strong>Where processing is based on Art. 6(1)(f) GDPR (legitimate interests), you have the right to object to this processing at any time on grounds relating to your particular situation.</strong> The controller will then no longer process the data concerned unless the controller can demonstrate compelling legitimate grounds for the processing which override your interests, rights and freedoms, or the processing serves the establishment, exercise or defence of legal claims.</p>
+<p>The following are based on legitimate interests:</p>
+<ul>
+<li>the requests to Apple at start-up: charts, cover art and, where applicable, the show you last opened (section 5),</li>
+<li>the requests to daten.amapps.app at start-up and the inclusion of name and version in the user agent (section 6.1),</li>
+<li>fetching the purchase page settings (section 6.2),</li>
+<li>the use of the hosting providers Cloudflare and GitHub (section 6.3),</li>
+<li>the requests to the podcasters’ servers at start-up, the preloading of excerpts and the check after loading has been interrupted (section 7),</li>
+<li>loading the purchase offers at start-up and, on Android, the automatic check of your purchases (section 8),</li>
+<li>the rating prompt (section 9.1) and handling emails to support (section 9.2),</li>
+<li>the counters for the purchase page and the rating prompt on your device (section 10).</li>
+</ul>
+<p><strong>You can send your objection informally by email to <a href="mailto:support@amapps.app">support@amapps.app</a>.</strong> The controller will review every objection and let you know how it will be implemented. As the app works without an account, the controller cannot link requests to an individual device. You can, however, stop some of the processes listed yourself straight away: the app only loads the audio of excerpts while you have the excerpts area open; you can reset the counters on your device by clearing the app data. Without an internet connection, no requests are made, and downloaded episodes can still be played.</p>
+<hr>
+<h2>17. Right to lodge a complaint</h2>
+<p>You have the right to lodge a complaint with a data protection supervisory authority (Art. 77 GDPR), in particular in the Member State of your habitual residence, your place of work or the place of the alleged infringement. The authority responsible for the controller is:</p>
+<p>Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg (LfDI), Lautenschlagerstraße 20, 70173 Stuttgart, Germany</p>
+<hr>
+<h2>18. Obligation to provide data and automated decision-making</h2>
+<p>You are under no statutory or contractual obligation to provide any data. However, the app’s online functions cannot work without the technical connection data, in particular the IP address. You can listen to downloaded episodes even without an internet connection.</p>
+<p>There is <strong>no automated decision-making, including profiling</strong>, within the meaning of Art. 22 GDPR. Which purchase page settings apply for your region (section 6.2) is selected by the app on your device; this has no legal or similarly significant effect on you.</p>
+<hr>
+<h2>19. Children</h2>
+<p>The app is not specifically directed at children. It does not ask for anyone’s age and does not process any age-related data. The controller does not knowingly collect personal data from children.</p>
+<hr>
+<h2>20. Changes to this privacy policy</h2>
 <p>This privacy policy may be updated if the app, the services used or the legal situation change. The current version published here applies (see “Last updated” at the top).</p>
 <hr>
-<h2>14. Contact</h2>
-<p>For privacy questions, contact the controller at <a href="mailto:support@amapps.app">support@amapps.app</a>.</p>
+<h2>21. Contact</h2>
+<p>For privacy questions, you can reach the controller at <a href="mailto:support@amapps.app">support@amapps.app</a>.</p>
   </main>
 </body>
 </html>
