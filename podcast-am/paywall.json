@@ -1,7 +1,7 @@
 {
-  "default": { "paywall": "c", "frequency": 1, "subscriptions": true, "closeDelay": 3 },
+  "default": { "paywall": "c", "frequency": 1, "subscriptions": false, "closeDelay": 3 },
   "regions": {
-    "US": { "paywall": "c", "frequency": 1, "subscriptions": true, "closeDelay": 3 },
-    "CN": { "paywall": "c", "frequency": 1, "subscriptions": true, "closeDelay": 3 }
+    "US": { "paywall": "c", "frequency": 1, "subscriptions": false, "closeDelay": 3 },
+    "CN": { "paywall": "c", "frequency": 1, "subscriptions": false, "closeDelay": 3 }
   }
 }
