@@ -253,6 +253,10 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px)
   padding: 10px 18px;
 }
 .store-primary:hover { background: color-mix(in srgb, var(--accent) 85%, #000); border-color: transparent; color: #fff; }
+/* Kleiner Textlink unter den Knöpfen (Podcast AM: Charts-Seite) */
+.card-more { margin: 10px 0 0; font-size: 13px; }
+.card-more a { color: var(--muted); text-decoration: none; }
+.card-more a:hover { color: var(--text); text-decoration: underline; }
 
 /* Bildschirmfoto in groß */
 .lightbox {
