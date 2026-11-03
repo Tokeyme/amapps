@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Speichertest</title>
+<style>
+  body { font: 18px/1.5 -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+         margin: 0; padding: 24px; background: #f6f4ef; color: #222; }
+  main { max-width: 640px; margin: 0 auto; }
+  h1 { font-size: 26px; margin: 0 0 16px; }
+  .zeile { padding: 10px 14px; margin: 8px 0; background: #fff; border-radius: 8px; }
+  .gross { font-size: 22px; font-weight: 700; }
+  .gut { color: #1b6e2b; } .schlecht { color: #a11d1d; }
+  button { font-size: 20px; padding: 12px 20px; border-radius: 8px; border: 0;
+           background: #2a5db0; color: #fff; cursor: pointer; }
+  small { color: #666; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1c1c1e; color: #eee; } .zeile { background: #2c2c2e; }
+    small { color: #aaa; } .gut { color: #6fd38a; } .schlecht { color: #ff8a8a; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Speichertest (Safari, 7 Tage)</h1>
+  <div class="zeile gross" id="befund">…</div>
+  <div class="zeile" id="erster"></div>
+  <div class="zeile" id="bedienung"></div>
+  <div class="zeile" id="persist"></div>
+  <div class="zeile" id="umgebung"></div>
+  <p><button id="knopf" type="button">Einmal klicken (zählt als Bedienung)</button></p>
+  <p><small>Prüfseite für die Webfassung von „Entscheider“. Sie speichert nur Zeitstempel im
+  Browser (localStorage und ein Cookie) und sendet nichts. Nach dem Klick die Seite 7 Tage lang
+  nicht öffnen — auch keine andere Seite unter amapps.app.</small></p>
+</main>
+<script>
+(async () => {
+  const L = 'speichertest.';
+  const jetzt = new Date();
+  const $ = id => document.getElementById(id);
+  const tage = iso => ((jetzt - new Date(iso)) / 86400000).toFixed(2);
+
+  // Erst lesen, dann schreiben: Was beim Öffnen da ist, ist der Messwert.
+  let erster = null, klick = null, cookieErster = null;
+  try { erster = localStorage.getItem(L + 'erster'); klick = localStorage.getItem(L + 'klick'); } catch (e) {}
+  const m = document.cookie.match(/(?:^|; )speichertest_erster=([^;]+)/);
+  if (m) cookieErster = decodeURIComponent(m[1]);
+
+  if (erster) {
+    $('befund').innerHTML = '<span class="gut">localStorage ist noch da.</span>';
+    $('erster').textContent = 'Angelegt: ' + erster + ' (vor ' + tage(erster) + ' Tagen)';
+  } else {
+    $('befund').innerHTML = '<span class="schlecht">Kein Eintrag im localStorage</span> — erster Besuch oder gelöscht.';
+    $('erster').textContent = 'Jetzt neu angelegt: ' + jetzt.toISOString();
+    try { localStorage.setItem(L + 'erster', jetzt.toISOString()); } catch (e) {}
+  }
+  $('erster').textContent += ' · Cookie: ' + (cookieErster ? cookieErster : 'keiner');
+  if (!cookieErster) {
+    document.cookie = 'speichertest_erster=' + encodeURIComponent(jetzt.toISOString()) +
+      '; max-age=34560000; path=/; secure; samesite=lax';
+  }
+  $('bedienung').textContent = 'Letzte Bedienung (Klick): ' +
+    (klick ? klick + ' (vor ' + tage(klick) + ' Tagen)' : 'noch keine');
+
+  // Wie das Spiel: persist() beim Start, dann persisted() lesen.
+  let p1 = 'nicht vorhanden', p2 = 'nicht vorhanden';
+  try {
+    if (navigator.storage && navigator.storage.persist) p1 = String(await navigator.storage.persist());
+    if (navigator.storage && navigator.storage.persisted) p2 = String(await navigator.storage.persisted());
+  } catch (e) { p1 = 'Fehler: ' + e; }
+  $('persist').textContent = 'persist() → ' + p1 + ' · persisted() → ' + p2;
+
+  const standalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  $('umgebung').textContent = (standalone ? 'Als Web-App (Dock/Home-Bildschirm)' : 'Im Browser-Tab') +
+    ' · ' + navigator.userAgent;
+
+  $('knopf').addEventListener('click', () => {
+    const t = new Date().toISOString();
+    try { localStorage.setItem(L + 'klick', t); } catch (e) {}
+    $('bedienung').textContent = 'Letzte Bedienung (Klick): ' + t + ' — gespeichert.';
+  });
+})();
+</script>
+</body>
+</html>
