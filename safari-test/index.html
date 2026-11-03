@@ -64,23 +64,31 @@
   $('bedienung').textContent = 'Letzte Bedienung (Klick): ' +
     (klick ? klick + ' (vor ' + tage(klick) + ' Tagen)' : 'noch keine');
 
-  // Wie das Spiel: persist() beim Start, dann persisted() lesen.
-  let p1 = 'nicht vorhanden', p2 = 'nicht vorhanden';
-  try {
-    if (navigator.storage && navigator.storage.persist) p1 = String(await navigator.storage.persist());
-    if (navigator.storage && navigator.storage.persisted) p2 = String(await navigator.storage.persisted());
-  } catch (e) { p1 = 'Fehler: ' + e; }
-  $('persist').textContent = 'persist() → ' + p1 + ' · persisted() → ' + p2;
+  // Der Knopf zuerst — er darf nicht auf persist() warten müssen (Fassung 1 tat das; in
+  // Safari blieb der Knopf am 03.11.2026 ohne Wirkung).
+  $('knopf').addEventListener('click', () => {
+    const t = new Date().toISOString();
+    let ok = true;
+    try { localStorage.setItem(L + 'klick', t); ok = localStorage.getItem(L + 'klick') === t; } catch (e) { ok = false; }
+    $('bedienung').textContent = 'Letzte Bedienung (Klick): ' + t + (ok ? ' — gespeichert.' : ' — SPEICHERN FEHLGESCHLAGEN');
+    $('knopf').textContent = ok ? '✓ Klick gespeichert' : '✗ Speichern fehlgeschlagen';
+    $('knopf').style.background = ok ? '#1b6e2b' : '#a11d1d';
+  });
 
   const standalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
   $('umgebung').textContent = (standalone ? 'Als Web-App (Dock/Home-Bildschirm)' : 'Im Browser-Tab') +
     ' · ' + navigator.userAgent;
 
-  $('knopf').addEventListener('click', () => {
-    const t = new Date().toISOString();
-    try { localStorage.setItem(L + 'klick', t); } catch (e) {}
-    $('bedienung').textContent = 'Letzte Bedienung (Klick): ' + t + ' — gespeichert.';
-  });
+  // Wie das Spiel: persist() beim Start, dann persisted() lesen — mit Zeitlimit, damit eine
+  // ausbleibende Antwort sichtbar wird statt die Seite anzuhalten.
+  const mitFrist = (p, ms) => Promise.race([p, new Promise(r => setTimeout(() => r('keine Antwort nach ' + ms / 1000 + ' s'), ms))]);
+  $('persist').textContent = 'persist() … wartet auf Antwort';
+  let p1 = 'nicht vorhanden', p2 = 'nicht vorhanden';
+  try {
+    if (navigator.storage && navigator.storage.persist) p1 = String(await mitFrist(navigator.storage.persist(), 5000));
+    if (navigator.storage && navigator.storage.persisted) p2 = String(await mitFrist(navigator.storage.persisted(), 5000));
+  } catch (e) { p1 = 'Fehler: ' + e; }
+  $('persist').textContent = 'persist() → ' + p1 + ' · persisted() → ' + p2;
 })();
 </script>
 </body>
