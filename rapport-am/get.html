@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Rapport AM</title>
+<!--
+  The one address Rapport AM hands out ("Share the app"), the same idea as
+  podcast-am/get.html. It looks at the device and sends it straight on to its
+  own store; nothing to read here. Rapport AM has no Mac version, so a Mac
+  stays on this page and sees both links. GitHub Pages cannot redirect on the server,
+  so the choice is made by the first script on the page, with location.replace
+  so the back button does not return here. Without JavaScript the two links
+  below are the page.
+-->
+<script>
+(function () {
+  var APPLE = 'https://apps.apple.com/app/id6797967865';
+  var PLAY = 'https://play.google.com/store/apps/details?id=com.rapportam.app';
+  var ua = navigator.userAgent || '';
+  var isIOS = /iPhone|iPad|iPod/.test(ua) ||
+    // An iPad on iPadOS calls itself a Mac — but a Mac has no touch points.
+    (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  var isAndroid = /Android/.test(ua);
+  var to = isIOS ? APPLE : isAndroid ? PLAY : null;
+  if (to) location.replace(to);
+})();
+</script>
+<style>
+  body { margin: 0; font-family: -apple-system, system-ui, sans-serif; background: #0b0b12; color: #f2f2f7;
+         display: flex; min-height: 100vh; align-items: center; justify-content: center; text-align: center; }
+  main { padding: 32px 24px; max-width: 420px; }
+  h1 { font-size: 28px; margin: 0 0 8px; }
+  p { color: #b8b8c6; margin: 0 0 24px; }
+  a { display: block; margin: 12px auto; padding: 14px 20px; border-radius: 14px; background: #2f6bff;
+      color: #fff; text-decoration: none; font-weight: 600; }
+  a.play { background: #22a559; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Rapport AM</h1>
+  <p>Job sheets on your phone, signed on site.</p>
+  <a href="https://apps.apple.com/app/id6797967865">App Store (iPhone, iPad)</a>
+  <a class="play" href="https://play.google.com/store/apps/details?id=com.rapportam.app">Google Play</a>
+</main>
+</body>
+</html>
